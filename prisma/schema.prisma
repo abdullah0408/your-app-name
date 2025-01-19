@@ -8,7 +8,7 @@ generator client {
 }
 
 model User {
-  id           Int     @id
+  id           String     @id
   email        String  @unique
   isSubscribed Boolean @default(false)
 }
