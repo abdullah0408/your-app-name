@@ -51,12 +51,13 @@ export async function POST(req) {
     console.log('userId:', evt.data.id)
 
     const prisma = new PrismaClient()
+    // const email = user.
 
     // Create a new user record in the database
     await prisma.user.create({
       data: {
         id: evt.data.id,
-        email: evt.data.email,
+        email: evt.data.email_addresses[0]?.email_address,
         // Default values or additional user properties can be added here
       },
     })
